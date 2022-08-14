@@ -1,9 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../pages/widget.dart';
+import '../widgets/widget.dart';
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,10 @@ class MyHomePage extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: SvgPicture.asset(
-                              "../asset/svg/LogoBilelikde.svg"),
+                            "../asset/svg/LogoBilelikde.svg",
+                            height: 42,
+                            width: 46,
+                          ),
                         ),
                         InkWell(
                           child: Container(
@@ -78,19 +83,23 @@ class MyHomePage extends StatelessWidget {
                             color: Color.fromRGBO(233, 233, 233, 1), width: 1),
                       ),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Поиск услуг и многое другое",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 13,
-                              color: Color.fromRGBO(186, 186, 186, 1),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 14.0),
+                            child: Text(
+                              "Поиск услуг и многое другое",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 13,
+                                color: Color.fromRGBO(186, 186, 186, 1),
+                              ),
                             ),
                           ),
                           InkWell(
                             child: Container(
-                              height: 39,
-                              width: 152,
+                              height: 42,
+                              width: 86,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(7),
                                 border: Border.all(
@@ -127,22 +136,25 @@ class MyHomePage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 8),
                     child: ClipRRect(
-                      child: CachedNetworkImage(
+                      child: Container(
+                        width: MediaQuery.of(context).size.width - 40,
+                        height: 156,
+                        child: CachedNetworkImage(
                           imageUrl:
                               "https://img.freepik.com/free-vector/group-of-multiracial-students-diverse-people_107791-12502.jpg?size=626&ext=jpg&uid=R69422584&ga=GA1.2.169085178.1650572093",
-                          height: 156,
-                          width: MediaQuery.of(context).size.width - 40,
+                          fit: BoxFit.contain,
                           progressIndicatorBuilder:
                               (context, url, downloadProgress) =>
                                   CircularProgressIndicator(
                                       value: downloadProgress.progress),
                           errorWidget: (context, url, error) =>
                               Image.asset('asset/images/broken-image.png'),
-                          fit: BoxFit.none),
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 8),
+                    padding: EdgeInsets.only(top: 8, right: 250),
                     child: Text(
                       'Новые вакансии',
                       style: TextStyle(
@@ -151,7 +163,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                ],
+                  ],
               ),
             ],
           ),

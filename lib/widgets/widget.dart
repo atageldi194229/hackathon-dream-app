@@ -6,15 +6,14 @@ import '../pages/otmecennyye.dart';
 import '../pages/profil_page.dart';
 import '../pages/uslugi_page.dart';
 
-
-class HomePageApp extends StatefulWidget {
-  const HomePageApp({Key? key}) : super(key: key);
+class BilelikdeApp extends StatefulWidget {
+  const BilelikdeApp(Key key) : super(key: key);
 
   @override
-  State<HomePageApp> createState() => _HomePageAppState();
+  State<BilelikdeApp> createState() => _BilelikdeAppState();
 }
 
-class _HomePageAppState extends State<HomePageApp> {
+class _BilelikdeAppState extends State<BilelikdeApp> {
   int change = 0;
   List pages = [];
   TabController? tabController;
@@ -24,11 +23,11 @@ class _HomePageAppState extends State<HomePageApp> {
   var fourth = PageStorageKey("fourth_key");
   var fifth = PageStorageKey("fifth_key");
   void initState() {
-    FirstPage bir = MyHomePage(firstkey);
-    tapBarPage iki = UslugiPage(second);
-    Otmechennye uc = OtmecennyyePage(third);
-    Kommentarii dort = KommentariiPage(fourth);
-    Profil bas = ProfilPage(fifth);
+    BilelikdeApp bir = BilelikdeApp(firstkey);
+    UslugiPage iki = UslugiPage(second);
+    OtmecennyyePage uc = OtmecennyyePage(third);
+    KommentariiPage dort = KommentariiPage(fourth);
+    ProfilPage bas = ProfilPage(fifth);
     pages = [bir, iki, uc, dort, bas];
     super.initState();
   }
@@ -43,18 +42,17 @@ class _HomePageAppState extends State<HomePageApp> {
         child: BottomNavigationBar(
           items: [
             BottomNavigationBarItem(
-              icon: SvgPicture.asset("asset/svg/home.svg"),
+              icon: SvgPicture.asset("../asset/svg/home.svg"),
               activeIcon: SvgPicture.asset(
-                "asset/svg/homeakt.svg",
+                "../asset/svg/homeakt.svg",
                 color: Color.fromRGBO(56, 107, 246, 1),
               ),
               label: "Главная",
-              
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset("asset/svg/uslugibez.svg"),
+              icon: SvgPicture.asset("../asset/svg/uslugibez.svg"),
               activeIcon: SvgPicture.asset(
-                "asset/svg/uslugivyb.svg",
+                "../asset/svg/uslugivyb.svg",
                 color: Color.fromRGBO(56, 107, 246, 1),
               ),
               label: "Услуги",
@@ -67,17 +65,17 @@ class _HomePageAppState extends State<HomePageApp> {
                     borderRadius: BorderRadius.circular(5),
                     color: Color.fromRGBO(22, 22, 22, 100)),
                 child: Center(
-                    child: SvgPicture.asset("asset/svg/otmecbez.svg"),
+                  child: SvgPicture.asset("../asset/svg/otmecbez.svg"),
                 ),
               ),
               activeIcon: Container(
                 width: 20,
                 height: 20,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5), color: Color.fromRGBO(56, 107, 246, 1)),
+                    borderRadius: BorderRadius.circular(5),
+                    color: Color.fromRGBO(56, 107, 246, 1)),
                 child: Center(
-                  child: SvgPicture.asset("asset/svg/otmecvyb.svg"
-                  ),
+                  child: SvgPicture.asset("../asset/svg/otmecvyb.svg"),
                 ),
               ),
               label: "Отмеченные",
@@ -86,12 +84,12 @@ class _HomePageAppState extends State<HomePageApp> {
               icon: Container(
                   width: 20,
                   height: 20,
-                  child: SvgPicture.asset("asset/svg/kommentariibez.svg")),
+                  child: SvgPicture.asset("../asset/svg/kommentariibez.svg")),
               activeIcon: Container(
                 width: 20,
                 height: 20,
                 child: SvgPicture.asset(
-                  "asset/svg/kommentariivyb.svg",
+                  "../asset/svg/kommentariivyb.svg",
                   color: Colors.blue,
                 ),
               ),
@@ -125,3 +123,5 @@ class _HomePageAppState extends State<HomePageApp> {
     );
   }
 }
+
+

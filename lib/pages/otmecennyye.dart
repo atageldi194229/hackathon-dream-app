@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-class OtmecennyyePage extends StatefulWidget {
-  const OtmecennyyePage({ Key? key }) : super(key: key);
-
-  @override
-  State<OtmecennyyePage> createState() => _OtmecennyyePageState();
-}
-
-class _OtmecennyyePageState extends State<OtmecennyyePage> {
-  @override
+class OtmecennyyePage extends StatelessWidget {
+  const OtmecennyyePage( Key key ) : super(key: key);
+@override
   Widget build(BuildContext context) {
     return Container(
       
