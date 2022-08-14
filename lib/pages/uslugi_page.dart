@@ -1,17 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// class UslugiPage extends StatelessWidget {
-//   const UslugiPage( Key key ) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-
-//     );
-//   }
-// }
-
 class UslugiPage extends StatelessWidget {
   const UslugiPage(Key key) : super(key: key);
   @override

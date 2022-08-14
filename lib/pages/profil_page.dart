@@ -34,7 +34,7 @@ class _ProfilPageState extends State<ProfilPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: ((context) => HomePage())));
+                              builder: ((context) => BilelikdeApp())));
                     },
                   ),
                   Padding(

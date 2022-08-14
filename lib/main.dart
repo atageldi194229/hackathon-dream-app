@@ -15,10 +15,7 @@ class Bilelikde extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // localizationsDelegates: AppLocalization.localizationDelegates,
-      // supportedLocales: AppLocalizations.supportedLocales,
-
-      theme: ThemeData(
+        theme: ThemeData(
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         hoverColor: Colors.transparent,
@@ -28,7 +25,7 @@ class Bilelikde extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      home: HomePage(),
+      home: BilelikdeApp(),
     );
   }
 }
